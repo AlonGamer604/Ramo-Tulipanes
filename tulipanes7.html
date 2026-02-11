@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Cintia 💖 | San Valentín</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --red1: #ff0000;
+  --pink1: #ff69b4;
+  --pink2: #ff1493;
+  --green1: #1b5e20;
+  --green2: #4caf50;
+  --ribbon: #dc143c;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #fff0f5, #e7b6c8, #b45a78);
+  overflow: hidden;
+}
+
+/* ================= RAMO ================= */
+.bouquet {
+  position: relative;
+  width: 22rem;
+  height: 30rem;
+  animation: sway 8s ease-in-out infinite 6s;
+  transform-origin: bottom center;
+}
+
+@keyframes sway {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(1deg); }
+  50% { transform: rotate(0); }
+  75% { transform: rotate(-1deg); }
+  100% { transform: rotate(0); }
+}
+
+/* ================= FONDO CON BRILLOS ================= */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.35), transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(255,255,255,.25), transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(255,255,255,.2), transparent 50%);
+  animation: glow 6s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes glow {
+  from { opacity: .4; }
+  to   { opacity: .8; }
+}
+
+
+/* ================= BOTÓN SORPRESA ================= */
+.surprise-btn {
+  position: absolute;
+  top: -3.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: .6rem 1.4rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 2rem;
+  background: linear-gradient(45deg, #ff5a7a, #dc143c);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 .4rem .8rem rgba(0,0,0,.3);
+  opacity: 0;
+  animation: btnIn 1s ease forwards 4.5s;
+}
+
+@keyframes btnIn {
+  to { opacity: 1; }
+}
+
+/* ================= MENSAJE SORPRESA ================= */
+.surprise {
+  position: absolute;
+  top: -6.5rem;
+  width: 100%;
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  color: #a00020;
+  opacity: 0;
+  transform: scale(.6);
+  transition: all .6s ease;
+}
+
+.surprise.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.surprise-btn.used {
+  animation: vanish 1s forwards;
+}
+
+@keyframes vanish {
+  to {
+    opacity: 0;
+    transform: translateX(-50%) scale(0);
+  }
+}
+.bee3.react {
+  animation-duration: 22s;
+}
+
+
+/* ================= TULIPANES ================= */
+.tulip {
+  position: absolute;
+  bottom: 6rem;
+  left: 50%;
+  transform-origin: bottom center;
+}
+
+.t1 { transform: translateX(-50%) translateX(-5rem) rotate(-30deg); }
+.t2 { transform: translateX(-50%) translateX(-3.5rem) rotate(-20deg); }
+.t3 { transform: translateX(-50%) translateX(-2rem) rotate(-10deg); }
+.t4 { transform: translateX(-50%); }
+.t5 { transform: translateX(-50%) translateX(2rem) rotate(10deg); }
+.t6 { transform: translateX(-50%) translateX(3.5rem) rotate(20deg); }
+.t7 { transform: translateX(-50%) translateX(5rem) rotate(30deg); }
+
+.tulip-inner {
+  opacity: 0;
+  animation: grow 1.2s ease forwards;
+}
+
+.t1 .tulip-inner { animation-delay: .3s; }
+.t2 .tulip-inner { animation-delay: .6s; }
+.t3 .tulip-inner { animation-delay: .9s; }
+.t4 .tulip-inner { animation-delay: 1.2s; }
+.t5 .tulip-inner { animation-delay: 1.5s; }
+.t6 .tulip-inner { animation-delay: 1.8s; }
+.t7 .tulip-inner { animation-delay: 2.1s; }
+
+@keyframes grow {
+  from { opacity: 0; transform: translateY(3rem) scale(.3); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.stem {
+  width: .4rem;
+  height: 11rem;
+  background: linear-gradient(to bottom, var(--green1), var(--green2));
+  border-radius: 1rem;
+  margin: 0 auto;
+}
+
+.leaf {
+  position: absolute;
+  width: 1.3rem;
+  height: 7rem;
+  background: linear-gradient(to right, #2e7d32, #66bb6a);
+  border-radius: 100% 0 100% 0;
+  top: 5rem;
+}
+
+.leaf.left { left: -1rem; transform: rotate(-30deg); }
+.leaf.right { right: -1rem; transform: rotate(30deg) scaleX(-1); }
+
+.flower {
+  position: absolute;
+  bottom: 10.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5rem;
+  height: 5.2rem;
+}
+
+.petal {
+  position: absolute;
+  width: 2.8rem;
+  height: 4rem;
+  border-radius: 80% 80% 55% 55%;
+}
+
+.petal.center {
+  left: 1.1rem;
+  top: .2rem;
+  background: linear-gradient(to top, #8b0000, var(--red1));
+}
+
+.petal.left {
+  left: 0;
+  top: .9rem;
+  transform: rotate(-18deg);
+  background: linear-gradient(to top, #b11226, var(--pink1));
+}
+
+.petal.right {
+  right: 0;
+  top: .9rem;
+  transform: rotate(18deg);
+  background: linear-gradient(to top, #a0144f, var(--pink2));
+}
+
+.ribbon {
+  position: absolute;
+  bottom: 3.5rem;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  width: 12rem;      /* largo */
+  height: 2.2rem;
+  background: linear-gradient(to right, #a00020, var(--ribbon), #ff5a7a);
+  border-radius: 1.5rem;
+  animation: ribbonIn 1s ease forwards 2.8s;
+
+  }
+
+
+
+@keyframes ribbonIn {
+  to { transform: translateX(-50%) scale(1); }
+}
+
+.message {
+  position: absolute;
+  bottom: .6rem;
+  width: 100%;
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.9rem;
+  color: #7a001c;
+  opacity: 0;
+  animation: messageIn 1.5s ease forwards 3.5s;
+}
+
+@keyframes messageIn {
+  to { opacity: 1; }
+}
+
+/* ================= ABEJITAS ================= */
+.bee {
+  position: absolute;
+  width: 1.8rem;
+  height: 1.2rem;
+  background: #fdd835;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+/* Rayas */
+.bee::before,
+.bee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: .35rem;
+  height: 100%;
+  background: #000;
+}
+
+.bee::before { left: .45rem; }
+.bee::after  { left: 1.05rem; }
+
+/* Alas */
+.wing {
+  position: absolute;
+  top: -.45rem;
+  width: .9rem;
+  height: .6rem;
+  background: rgba(255,255,255,.7);
+  border-radius: 50%;
+  animation: flap .2s infinite alternate;
+}
+
+.wing.left  { left: -.35rem; transform: rotate(-25deg); }
+.wing.right { right: -.35rem; transform: rotate(25deg); }
+
+@keyframes flap {
+  from { transform: scale(1); }
+  to   { transform: scale(1.15); }
+}
+
+/* === ABEJA 1 === */
+.bee1 {
+  top: 28%;
+  left: -10%;
+  animation: fly1 16s linear infinite;
+}
+
+/* === ABEJA 2 === */
+.bee2 {
+  top: 40%;
+  left: 110%;
+  animation: fly2 18s linear infinite;
+}
+@keyframes wave {
+  0%   { transform: translateY(0); }
+  25%  { transform: translateY(-.6rem); }
+  50%  { transform: translateY(.6rem); }
+  75%  { transform: translateY(-.4rem); }
+  100% { transform: translateY(0); }
+}
+
+/* Vuelo hacia las flores (centro del ramo) */
+@keyframes fly1 {
+  0%   { transform: translateX(-10vw) translateY(0) rotate(5deg); }
+  35%  { transform: translateX(30vw) translateY(-2rem) rotate(-6deg); }
+  60%  { transform: translateX(50vw) translateY(3rem) rotate(6deg); }
+  75%  { transform: translateX(55vw) translateY(5rem) rotate(0deg); } /* se acerca */
+  100% { transform: translateX(120vw) translateY(-2rem) rotate(5deg); }
+}
+
+@keyframes fly2 {
+  0%   { transform: translateX(10vw) translateY(0) rotate(-5deg); }
+  30%  { transform: translateX(-25vw) translateY(-3rem) rotate(6deg); }
+  55%  { transform: translateX(-45vw) translateY(2rem) rotate(-6deg); }
+  70%  { transform: translateX(-50vw) translateY(4rem) rotate(0deg); } /* se acerca */
+  100% { transform: translateX(-120vw) translateY(-2rem) rotate(-5deg); }
+
+}
+/* ================= ABEJA 3 (RONDANDO Y POSÁNDOSE) ================= */
+
+.bee3 {
+  top: 50%;
+  left: 50%;
+  z-index: 4;
+  animation: orbitAndLand 16s ease-in-out infinite;
+  transform-origin: -2rem -6rem; /* centro del ramo */
+}
+
+@keyframes orbitAndLand {
+
+  /* Da vueltas */
+  0% {
+    transform: rotate(0deg) translateX(7rem) rotate(0deg);
+  }
+
+  30% {
+    transform: rotate(180deg) translateX(7rem) rotate(-180deg);
+  }
+
+  /* Se acerca a una flor */
+  45% {
+    transform: rotate(220deg) translateX(5.2rem) rotate(-220deg);
+  }
+
+  /* SE POSE */
+  60% {
+    transform: rotate(220deg) translateX(5.2rem) rotate(-220deg);
+  }
+
+  /* Pequeño flote mientras está posada */
+  70% {
+    transform: rotate(220deg) translateX(5.2rem) rotate(-220deg) translateY(.2rem);
+  }
+
+  80% {
+    transform: rotate(220deg) translateX(5.2rem) rotate(-220deg) translateY(-.2rem);
+  }
+
+  /* Retoma el vuelo */
+  100% {
+    transform: rotate(360deg) translateX(7rem) rotate(-360deg);
+  }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div class="bee bee1">
+  <span class="wing left"></span>
+  <span class="wing right"></span>
+</div>
+
+<div class="bee bee2">
+  <span class="wing left"></span>
+  <span class="wing right"></span>
+</div>
+
+<div class="bee bee3">
+  <div class="wing left"></div>
+  <div class="wing right"></div>
+</div>
+
+<div class="bouquet">
+
+  <button class="surprise-btn" onclick="showSurprise()">💌 Sorpresa</button>
+  <div class="surprise" id="surpriseText">
+    Verte me alegra el alma, como un campo de tulipanes 🌷
+
+  </div>
+
+  <!-- TULIPANES -->
+  <div class="tulip t1"><div class="tulip-inner"><div class="flower"><div class="petal left"></div><div class="petal center"></div><div class="petal right"></div></div><div class="stem"></div><div class="leaf left"></div></div></div>
+  <div class="tulip t2"><div class="tulip-inner"><div class="flower"><div class="petal left"></div><div class="petal center"></div><div class="petal right"></div></div><div class="stem"></div><div class="leaf right"></div></div></div>
+  <div class="tulip t3"><div class="tulip-inner"><div class="flower"><div class="petal left"></div><div class="petal center"></div><div class="petal right"></div></div><div class="stem"></div><div class="leaf left"></div></div></div>
+  <div class="tulip t4"><div class="tulip-inner"><div class="flower"><div class="petal left"></div><div class="petal center"></div><div class="petal right"></div></div><div class="stem"></div><div class="leaf right"></div></div></div>
+  <div class="tulip t5"><div class="tulip-inner"><div class="flower"><div class="petal left"></div><div class="petal center"></div><div class="petal right"></div></div><div class="stem"></div><div class="leaf left"></div></div></div>
+  <div class="tulip t6"><div class="tulip-inner"><div class="flower"><div class="petal left"></div><div class="petal center"></div><div class="petal right"></div></div><div class="stem"></div><div class="leaf right"></div></div></div>
+  <div class="tulip t7"><div class="tulip-inner"><div class="flower"><div class="petal left"></div><div class="petal center"></div><div class="petal right"></div></div><div class="stem"></div><div class="leaf left"></div></div></div>
+
+  <div class="ribbon">
+  <span class="tail left"></span>
+  <span class="tail right"></span>
+</div>
+
+
+  <div class="message">
+    Para Cintia.<br>Feliz San Valentín 💖
+  </div>
+
+</div>
+
+<script>
+function showSurprise() {
+  document.getElementById("surpriseText").classList.add("show");
+  document.querySelector(".surprise-btn").classList.add("used");
+  document.querySelector(".bee3").classList.add("react");
+}
+</script>
+
+
+</body>
+</html> 
