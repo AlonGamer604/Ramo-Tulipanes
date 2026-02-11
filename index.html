@@ -25,12 +25,13 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: radial-gradient(circle, #fff0f5, #e7b6c8, #b45a78);
-  overflow: hidden;
+  overflow-x: hidden;
+  padding: 2rem 0;
 }
 
 /* ================= RAMO ================= */
@@ -333,6 +334,13 @@ body::after {
 
 }
 /* ================= ABEJA 3 (RONDANDO Y POSÁNDOSE) ================= */
+@media (max-width: 600px) {
+
+  .bouquet {
+    transform: scale(0.85);
+  }
+
+}
 
 .bee3 {
   top: 50%;
@@ -439,3 +447,4 @@ function showSurprise() {
 
 </body>
 </html> 
+
