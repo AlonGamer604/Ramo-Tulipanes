@@ -25,14 +25,14 @@
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;      /* antes era min-height */
   display: flex;
   justify-content: center;
   align-items: center;
   background: radial-gradient(circle, #fff0f5, #e7b6c8, #b45a78);
-  overflow-x: hidden;
-  padding: 2rem 0;
+  overflow: hidden;   /* bloquea scroll */
 }
+
 
 /* ================= RAMO ================= */
 .bouquet {
@@ -465,6 +465,7 @@ function showSurprise() {
 
 </body>
 </html> 
+
 
 
 
